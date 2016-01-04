@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Flatiron School individual project"/>
+  <meta name="author" content="S. Andrew Reid">
+  <title>breddit: the best thing since sliced Digg</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="main.css">
+  <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+      <a href="/"><h1>BREDDIT</h1></a>
+        <h3><a href="/new">Add a new recipe</a></h3><br>
+        <h3><a href="/recipes">Show all recipes</a><br></h3>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-7">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
