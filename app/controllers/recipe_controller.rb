@@ -6,6 +6,7 @@ class RecipeController < ApplicationController
 
   post '/new' do
     @recipe = Recipe.create(params)
+    @comments = Comment.where(recipe_id: @recipe.id)
     erb :recipe
   end
 

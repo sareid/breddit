@@ -1,18 +1,22 @@
 <h2>Recipe: <%=@recipe.name%></h2>
+<form action="/<%=@recipe.slug%>/delete">
+  <input type="submit" value="Delete">
+</form>
 <h4>Posted by: <%=@recipe.user%></h3>
 <br>
 <p><%=@recipe.description%></p>
 <h4><a href="<%=@recipe.url%>">Source</a></h3>
 <br>
-<form action="/<%=@recipe.slug%>/delete">
-  <input type="submit" value="Delete">
-</form>
+
 <br>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseShowComment" aria-expanded="false" aria-controls="collapseShowComment">
   Show comments
 </button>
 <div class="collapse" id="collapseShowComment">
   <div class="well">
+    <% if @comments == [] %>
+      <p>There are no comments yet.</p>
+    <% end %>
     <%@comments.each do |comment| %>
       <h4><%= comment.user %> writes:</h4>
       <br>
@@ -31,7 +35,8 @@
 <div class="collapse" id="collapseNewComment">
   <div class="well">
     <form method="post" action="/new_comment/<%=@recipe.id%>">
-      <p>User: <input type="text" name="user"></p>
+      <p>User:</p>
+      <input type="text" name="user">
       <p>Comment:</p>
       <p><textarea name="comment_text" cols=70 rows=5></textarea></p>
     <input type="submit" value="Submit">
