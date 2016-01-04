@@ -1,7 +1,21 @@
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="/<%=@recipe.id%>/edit">Edit post</a></li>
+    <li><a href="/<%=@recipe.slug%>/delete">Delete post</a></li>
+  </ul>
+</div>
 <h2>Recipe: <%=@recipe.name%></h2>
+
+<!-- <form action="/<%=@recipe.id%>/edit">
+  <input type="submit" value="Edit">
+</form>
 <form action="/<%=@recipe.slug%>/delete">
   <input type="submit" value="Delete">
-</form>
+</form> -->
 <h4>Posted by: <%=@recipe.user%></h3>
 <br>
 <p><%=@recipe.description%></p>

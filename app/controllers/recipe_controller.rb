@@ -21,6 +21,21 @@ class RecipeController < ApplicationController
     redirect to '/'
   end
 
+  get '/:id/edit' do
+    @recipe = Recipe.find(params[:id])
+    erb :edit_recipe
+  end
+
+  post '/:id/edit' do
+    @recipe = Recipe.find(params[:id])
+    @recipe.name = params[:name]
+    @recipe.user = params[:user]
+    @recipe.url = params[:url]
+    @recipe.description = params[:description]
+    @recipe.save
+    redirect to "/#{@recipe.id}"
+  end
+
   get '/:id' do
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: params[:id])

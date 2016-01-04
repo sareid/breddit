@@ -1,0 +1,10 @@
+<h2>Editing "<%=@recipe.name%>"</h2>
+<form method="post" action="/<%=@recipe.id%>/edit">
+  <p>Name:</p>
+  <input type="text" name="name" value="<%=@recipe.name%>">
+  <p>User:</p><input type="text" name="user" value="<%=@recipe.user%>">
+  <p>Recipe URL:</p><input type="url" name="url" value="<%=@recipe.url%>">
+  <p>Description:</p>
+  <p><textarea name="description" cols=70 rows=5><%=@recipe.description%></textarea></p>
+  <input type="submit">
+</form>
