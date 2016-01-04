@@ -11,4 +11,10 @@ class CommentController < ApplicationController
     redirect to "/#{@comment.recipe_id}"
   end
 
+  get '/:recipe_id/:id/delete' do
+    @comment = Comment.find(params[:id])
+    @comment.delete
+    redirect to "/#{params[:recipe_id]}"
+  end
+
 end

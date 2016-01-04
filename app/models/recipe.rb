@@ -7,7 +7,6 @@ class Recipe < ActiveRecord::Base
 
   def self.find_by_slug(slug)
     recipe = Recipe.find_by (name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')) == slug
-    binding.pry
     recipe
   end
 

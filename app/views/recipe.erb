@@ -17,6 +17,9 @@
       <h4><%= comment.user %> writes:</h4>
       <br>
       <p><%= comment.comment_text %></p>
+      <form action="/<%=@recipe.id%>/<%=comment.id%>/delete">
+        <input type="submit" value="Delete">
+      </form>
     <% end %>
   </div>
 </div>
