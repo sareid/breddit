@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
   has_many :comments
+  belongs_to :user
 
   def slug
     self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')

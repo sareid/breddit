@@ -1,0 +1,13 @@
+<h2>User: <%=@user.name%></h2>
+<h3 class="userPage">Recipes</h3>
+<ul>
+  <% @recipes.each do |recipe| %>
+  <li><a href="/<%=recipe.id%>"><%=recipe.name%></a></li>
+  <% end %>
+</ul>
+<h3 class="userPage">Comments</h3>
+<ul>
+  <% @comments.each do |comment| %>
+  <li><a href="/<%=comment.recipe.id%>"><%=comment.recipe.name%></a></li>
+  <% end %>
+</ul>

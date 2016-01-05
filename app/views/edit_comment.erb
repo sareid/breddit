@@ -1,7 +1,7 @@
-<h2>Post your comment</h2>
-<form method="post" action="/new_comment">
-  <h3>User: <input type="text" name="user"></h2>
-  <h3>Comment:</3>
-  <p><textarea name="description" cols=40 rows=5></textarea></p>
+<h2>Editing comment by <%=@comment.user%></h2>
+<form method="post" action="/<%=@comment.recipe_id%>/<%=@comment.id%>/edit">
+  <p>User: <input type="text" name="user" value="<%=@comment.user%>"></p>
+  <p>Comment:</p>
+  <p><textarea name="description" cols=40 rows=5><%=@comment.comment_text%></textarea></p>
   <input type="submit">
 </form>

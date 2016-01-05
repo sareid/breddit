@@ -5,9 +5,12 @@ class RecipeController < ApplicationController
   end
 
   post '/new' do
-    @recipe = Recipe.create(params)
+    @user = User.find_or_create_by(name: params[:user])
+    @recipe = Recipe.create(name: params[:name], url: params[:url], description: params[:description])
+    @recipe.user = @user
     @comments = Comment.where(recipe_id: @recipe.id)
-    erb :recipe
+    @recipe.save
+    redirect to "/#{@recipe.id}"
   end
 
   get '/recipes' do
